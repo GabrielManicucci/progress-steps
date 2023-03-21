@@ -2,6 +2,10 @@
 
 :root {
   font-size: 62.5%;
+  --gray-color: #cecdcd;
+  --blue-color: #1e90ff;
+  --white-color:  #ececec;
+  
 }
 
 * {
@@ -9,8 +13,7 @@
 }
 
 body {
-  /* border: 2px solid red; */
-  background-color: #ececec;
+  background-color: var(--white-color);
   margin: 0;
   padding: 0;
   width: 100vw;
@@ -19,18 +22,15 @@ body {
   align-items: center;
   justify-content: center;
   font-family: 'Muli', sans-serif;
-  /* position: absolute; */
+  
 }
 
 #container {
-  /* border: 0.2rem solid; */
-  /* padding: 10rem 15rem; */
   text-align: center;
 
 }
 
 .progress-container {
-  /* border: 2px solid red; */
   position: relative;
   display: flex;
   flex-direction: row;
@@ -39,10 +39,22 @@ body {
   width: 35rem;
 }
 
-#progress {
-  /* width: 100%; */
+.progress-container::before {
+  content: '';
   position: absolute;
-  background-color: dodgerblue;
+  background-color: var(--gray-color);
+  height: 0.4rem;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  transition: 0.4s;
+  z-index: -1;
+  width: 100%;
+}
+
+.progress-barrier {
+  position: absolute;
+  background-color: var(--blue-color);
   height: 0.4rem;
   width: 0%;
   top: 50%;
@@ -53,7 +65,7 @@ body {
 }
 
 .circle {
-  border: 3px solid rgb(194, 194, 194);
+  border: 0.3rem solid var(--gray-color);
   border-radius: 50%;
   height: 3rem;
   width: 3rem;
@@ -64,16 +76,17 @@ body {
   padding: 1.1rem;
   color: #999;
   z-index: 2;
+  background: var(--white-color);
 }
 
 .circle.active {
-  border-color: dodgerblue;
+  border-color: var(--blue-color);
 }
 
 .btn {
   padding: 1.2rem 3rem;
   color: #fff;
-  background-color: dodgerblue;
+  background-color: var(--blue-color);
   border-radius: 1rem;
   border: none;
   margin: 0 0.5rem;
@@ -81,5 +94,5 @@ body {
 }
 
 .btn:disabled {
-  background-color: rgb(194, 194, 194);
+  background-color: var(--gray-color);
 }
