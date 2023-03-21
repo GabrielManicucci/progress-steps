@@ -81,6 +81,7 @@ body {
 
 .circle.active {
   border-color: var(--blue-color);
+  color: var(--blue-color);
 }
 
 .btn {
